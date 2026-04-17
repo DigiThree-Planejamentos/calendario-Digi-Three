@@ -220,12 +220,12 @@
   <button class="btn btn-ghost" onclick="exportHTML()">📥 Salvar HTML</button>
   <button class="btn btn-ghost" id="editModeBtn" onclick="toggleEditMode()">✏️ Modo Edição</button>
   <button class="btn btn-ghost" onclick="openDatasModal()">🗓 Datas Comemorativas</button>
-  <div class="month-nav" id="monthNav"><button class="month-btn" id="mnav0">Jan</button><button class="month-btn" id="mnav1">Fev</button><button class="month-btn" id="mnav2">Mar</button><button class="month-btn active" id="mnav3">Abr</button><button class="month-btn" id="mnav4">Mai</button><button class="month-btn" id="mnav5">Jun</button><button class="month-btn" id="mnav6">Jul</button><button class="month-btn" id="mnav7">Ago</button><button class="month-btn" id="mnav8">Set</button><button class="month-btn" id="mnav9">Out</button><button class="month-btn" id="mnav10">Nov</button><button class="month-btn" id="mnav11">Dez</button></div>
+  <div class="month-nav" id="monthNav"><button class="month-btn active" id="mnav0">Jan</button><button class="month-btn" id="mnav1">Fev</button><button class="month-btn" id="mnav2">Mar</button><button class="month-btn" id="mnav3">Abr</button><button class="month-btn" id="mnav4">Mai</button><button class="month-btn" id="mnav5">Jun</button><button class="month-btn" id="mnav6">Jul</button><button class="month-btn" id="mnav7">Ago</button><button class="month-btn" id="mnav8">Set</button><button class="month-btn" id="mnav9">Out</button><button class="month-btn" id="mnav10">Nov</button><button class="month-btn" id="mnav11">Dez</button><button class="month-btn" id="mnav0">Jan</button><button class="month-btn" id="mnav1">Fev</button><button class="month-btn" id="mnav2">Mar</button><button class="month-btn" id="mnav3">Abr</button><button class="month-btn" id="mnav4">Mai</button><button class="month-btn" id="mnav5">Jun</button><button class="month-btn" id="mnav6">Jul</button><button class="month-btn" id="mnav7">Ago</button><button class="month-btn" id="mnav8">Set</button><button class="month-btn" id="mnav9">Out</button><button class="month-btn" id="mnav10">Nov</button><button class="month-btn" id="mnav11">Dez</button></div>
 </div>
 
 <div class="stats-bar">
-  <div class="stat-pill"><div class="num" style="color:var(--navy)" id="statTotal">12</div><div class="lbl">Total Posts</div></div>
-  <div class="stat-pill"><div class="num" style="color:var(--arte)" id="statArte">0</div><div class="lbl">Artes</div></div>
+  <div class="stat-pill"><div class="num" style="color:var(--navy)" id="statTotal">13</div><div class="lbl">Total Posts</div></div>
+  <div class="stat-pill"><div class="num" style="color:var(--arte)" id="statArte">1</div><div class="lbl">Artes</div></div>
   <div class="stat-pill"><div class="num" style="color:var(--foto)" id="statFoto">0</div><div class="lbl">Fotos</div></div>
   <div class="stat-pill"><div class="num" style="color:var(--story)" id="statStory">0</div><div class="lbl">Stories</div></div>
   <div class="stat-pill"><div class="num" style="color:var(--reels)" id="statReels">7</div><div class="lbl">Reels</div></div>
@@ -267,7 +267,18 @@
         <textarea class="plan-input" style="min-height:48px;resize:vertical" placeholder="Anotações livres…" onchange="savePlanField(1,'observacoes',this.value)"></textarea>
       </div>
     </div>
-  </div><div class="cal-grid-outer"><div class="cal-dow"><div class="cal-dow-cell wknd">Dom</div><div class="cal-dow-cell">Seg</div><div class="cal-dow-cell">Ter</div><div class="cal-dow-cell">Qua</div><div class="cal-dow-cell">Qui</div><div class="cal-dow-cell">Sex</div><div class="cal-dow-cell wknd">Sáb</div></div><div class="cal-weeks"><div class="cal-week"><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day" data-day="1"><div class="day-num">1</div><div class="special-label">🎆 Ano Novo</div><button class="add-post-btn" onclick="openModal(0,1,true)">＋ post</button></div><div class="cal-day" data-day="2"><div class="day-num">2</div><button class="add-post-btn" onclick="openModal(0,2,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="3"><div class="day-num">3</div><button class="add-post-btn" onclick="openModal(0,3,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="4"><div class="day-num">4</div><button class="add-post-btn" onclick="openModal(0,4,true)">＋ post</button></div><div class="cal-day" data-day="5"><div class="day-num">5</div><button class="add-post-btn" onclick="openModal(0,5,true)">＋ post</button></div><div class="cal-day" data-day="6"><div class="day-num">6</div><button class="add-post-btn" onclick="openModal(0,6,true)">＋ post</button></div><div class="cal-day" data-day="7"><div class="day-num">7</div><button class="add-post-btn" onclick="openModal(0,7,true)">＋ post</button></div><div class="cal-day" data-day="8"><div class="day-num">8</div><button class="add-post-btn" onclick="openModal(0,8,true)">＋ post</button></div><div class="cal-day" data-day="9"><div class="day-num">9</div><button class="add-post-btn" onclick="openModal(0,9,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="10"><div class="day-num">10</div><button class="add-post-btn" onclick="openModal(0,10,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="11"><div class="day-num">11</div><button class="add-post-btn" onclick="openModal(0,11,true)">＋ post</button></div><div class="cal-day" data-day="12"><div class="day-num">12</div><button class="add-post-btn" onclick="openModal(0,12,true)">＋ post</button></div><div class="cal-day" data-day="13"><div class="day-num">13</div><button class="add-post-btn" onclick="openModal(0,13,true)">＋ post</button></div><div class="cal-day" data-day="14"><div class="day-num">14</div><button class="add-post-btn" onclick="openModal(0,14,true)">＋ post</button></div><div class="cal-day" data-day="15"><div class="day-num">15</div><button class="add-post-btn" onclick="openModal(0,15,true)">＋ post</button></div><div class="cal-day" data-day="16"><div class="day-num">16</div><button class="add-post-btn" onclick="openModal(0,16,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="17"><div class="day-num">17</div><button class="add-post-btn" onclick="openModal(0,17,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="18"><div class="day-num">18</div><button class="add-post-btn" onclick="openModal(0,18,true)">＋ post</button></div><div class="cal-day" data-day="19"><div class="day-num">19</div><button class="add-post-btn" onclick="openModal(0,19,true)">＋ post</button></div><div class="cal-day" data-day="20"><div class="day-num">20</div><button class="add-post-btn" onclick="openModal(0,20,true)">＋ post</button></div><div class="cal-day" data-day="21"><div class="day-num">21</div><button class="add-post-btn" onclick="openModal(0,21,true)">＋ post</button></div><div class="cal-day" data-day="22"><div class="day-num">22</div><button class="add-post-btn" onclick="openModal(0,22,true)">＋ post</button></div><div class="cal-day" data-day="23"><div class="day-num">23</div><button class="add-post-btn" onclick="openModal(0,23,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="24"><div class="day-num">24</div><button class="add-post-btn" onclick="openModal(0,24,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="25"><div class="day-num">25</div><button class="add-post-btn" onclick="openModal(0,25,true)">＋ post</button></div><div class="cal-day" data-day="26"><div class="day-num">26</div><button class="add-post-btn" onclick="openModal(0,26,true)">＋ post</button></div><div class="cal-day" data-day="27"><div class="day-num">27</div><button class="add-post-btn" onclick="openModal(0,27,true)">＋ post</button></div><div class="cal-day" data-day="28"><div class="day-num">28</div><button class="add-post-btn" onclick="openModal(0,28,true)">＋ post</button></div><div class="cal-day" data-day="29"><div class="day-num">29</div><button class="add-post-btn" onclick="openModal(0,29,true)">＋ post</button></div><div class="cal-day" data-day="30"><div class="day-num">30</div><button class="add-post-btn" onclick="openModal(0,30,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="31"><div class="day-num">31</div><button class="add-post-btn" onclick="openModal(0,31,true)">＋ post</button></div></div></div></div></div><div class="month-block" id="month-1"><div class="month-header"><div class="month-title">Fevereiro <em>2026</em></div><div class="month-badge">Mês 2</div></div><div class="month-notes" contenteditable="true" data-month="2" placeholder="Descreva a campanha do mês, promoções, objetivos…"></div><div class="plan-panel">
+  </div><div class="cal-grid-outer"><div class="cal-dow"><div class="cal-dow-cell wknd">Dom</div><div class="cal-dow-cell">Seg</div><div class="cal-dow-cell">Ter</div><div class="cal-dow-cell">Qua</div><div class="cal-dow-cell">Qui</div><div class="cal-dow-cell">Sex</div><div class="cal-dow-cell wknd">Sáb</div></div><div class="cal-weeks"><div class="cal-week"><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day" data-day="1"><div class="day-num">1</div><div class="special-label">🎆 Ano Novo</div><button class="add-post-btn" onclick="openModal(0,1,true)">＋ post</button></div><div class="cal-day" data-day="2"><div class="day-num">2</div><button class="add-post-btn" onclick="openModal(0,2,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="3"><div class="day-num">3</div><button class="add-post-btn" onclick="openModal(0,3,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="4"><div class="day-num">4</div>
+            <div class="post-card arte" onclick="openModal(0,4)">
+              <div class="card-actions">
+                <button class="card-btn" onclick="event.stopPropagation();togglePostado(0,4)" title="Toggle postado">✅</button>
+                <button class="card-btn" onclick="event.stopPropagation();openModal(0,4)">✏️</button>
+                <button class="card-btn" onclick="event.stopPropagation();deletePostByKey(0,4)">🗑</button>
+              </div>
+              <div class="post-type-tag">🎨 Arte</div>
+              
+              <div class="post-title" contenteditable="true" spellcheck="false" onclick="event.stopPropagation()" onblur="updateTitle(0,4,this.innerText)">teste</div>
+              <div class="card-gallery"><button class="add-thumb-btn" onclick="event.stopPropagation();triggerCardImg(0,4)" title="Adicionar foto">＋</button></div>
+            </div></div><div class="cal-day" data-day="5"><div class="day-num">5</div><button class="add-post-btn" onclick="openModal(0,5,true)">＋ post</button></div><div class="cal-day" data-day="6"><div class="day-num">6</div><button class="add-post-btn" onclick="openModal(0,6,true)">＋ post</button></div><div class="cal-day" data-day="7"><div class="day-num">7</div><button class="add-post-btn" onclick="openModal(0,7,true)">＋ post</button></div><div class="cal-day" data-day="8"><div class="day-num">8</div><button class="add-post-btn" onclick="openModal(0,8,true)">＋ post</button></div><div class="cal-day" data-day="9"><div class="day-num">9</div><button class="add-post-btn" onclick="openModal(0,9,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="10"><div class="day-num">10</div><button class="add-post-btn" onclick="openModal(0,10,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="11"><div class="day-num">11</div><button class="add-post-btn" onclick="openModal(0,11,true)">＋ post</button></div><div class="cal-day" data-day="12"><div class="day-num">12</div><button class="add-post-btn" onclick="openModal(0,12,true)">＋ post</button></div><div class="cal-day" data-day="13"><div class="day-num">13</div><button class="add-post-btn" onclick="openModal(0,13,true)">＋ post</button></div><div class="cal-day" data-day="14"><div class="day-num">14</div><button class="add-post-btn" onclick="openModal(0,14,true)">＋ post</button></div><div class="cal-day" data-day="15"><div class="day-num">15</div><button class="add-post-btn" onclick="openModal(0,15,true)">＋ post</button></div><div class="cal-day" data-day="16"><div class="day-num">16</div><button class="add-post-btn" onclick="openModal(0,16,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="17"><div class="day-num">17</div><button class="add-post-btn" onclick="openModal(0,17,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="18"><div class="day-num">18</div><button class="add-post-btn" onclick="openModal(0,18,true)">＋ post</button></div><div class="cal-day" data-day="19"><div class="day-num">19</div><button class="add-post-btn" onclick="openModal(0,19,true)">＋ post</button></div><div class="cal-day" data-day="20"><div class="day-num">20</div><button class="add-post-btn" onclick="openModal(0,20,true)">＋ post</button></div><div class="cal-day" data-day="21"><div class="day-num">21</div><button class="add-post-btn" onclick="openModal(0,21,true)">＋ post</button></div><div class="cal-day" data-day="22"><div class="day-num">22</div><button class="add-post-btn" onclick="openModal(0,22,true)">＋ post</button></div><div class="cal-day" data-day="23"><div class="day-num">23</div><button class="add-post-btn" onclick="openModal(0,23,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="24"><div class="day-num">24</div><button class="add-post-btn" onclick="openModal(0,24,true)">＋ post</button></div></div><div class="cal-week"><div class="cal-day wknd-col" data-day="25"><div class="day-num">25</div><button class="add-post-btn" onclick="openModal(0,25,true)">＋ post</button></div><div class="cal-day" data-day="26"><div class="day-num">26</div><button class="add-post-btn" onclick="openModal(0,26,true)">＋ post</button></div><div class="cal-day" data-day="27"><div class="day-num">27</div><button class="add-post-btn" onclick="openModal(0,27,true)">＋ post</button></div><div class="cal-day" data-day="28"><div class="day-num">28</div><button class="add-post-btn" onclick="openModal(0,28,true)">＋ post</button></div><div class="cal-day" data-day="29"><div class="day-num">29</div><button class="add-post-btn" onclick="openModal(0,29,true)">＋ post</button></div><div class="cal-day" data-day="30"><div class="day-num">30</div><button class="add-post-btn" onclick="openModal(0,30,true)">＋ post</button></div><div class="cal-day wknd-col" data-day="31"><div class="day-num">31</div><button class="add-post-btn" onclick="openModal(0,31,true)">＋ post</button></div></div></div></div></div><div class="month-block" id="month-1"><div class="month-header"><div class="month-title">Fevereiro <em>2026</em></div><div class="month-badge">Mês 2</div></div><div class="month-notes" contenteditable="true" data-month="2" placeholder="Descreva a campanha do mês, promoções, objetivos…"></div><div class="plan-panel">
     <div class="plan-header-row">
       <span class="plan-icon">📋</span>
       <span>Planejamento do Mês</span>
@@ -341,29 +352,29 @@
     <div class="plan-grid">
       <div class="plan-cell">
         <div class="plan-label"><span>🎯</span> Objetivos de Campanha</div>
-        <textarea class="plan-input tall" placeholder="Ex: Aumentar leads, lançar promoção…" onchange="savePlanField(4,'objetivos',this.value)"></textarea>
+        <textarea class="plan-input tall" placeholder="Ex: Aumentar leads, lançar promoção…" onchange="savePlanField(4,'objetivos',this.value)">Melhorar alcance no orgânico.</textarea>
       </div>
       <div class="plan-cell">
         <div class="plan-label"><span>💰</span> Investimento em Mídia</div>
-        <textarea class="plan-input tall" placeholder="Ex: R$ 1.000 — Meta Ads…" onchange="savePlanField(4,'investimento',this.value)"></textarea>
+        <textarea class="plan-input tall" placeholder="Ex: R$ 1.000 — Meta Ads…" onchange="savePlanField(4,'investimento',this.value)">500 reais.</textarea>
       </div>
       <div class="plan-cell">
         <div class="plan-label"><span>💸</span> Tráfego Pago</div>
-        <textarea class="plan-input tall" placeholder="Ex: R$ 600 Meta Ads…" onchange="savePlanField(4,'trafego',this.value)"></textarea>
+        <textarea class="plan-input tall" placeholder="Ex: R$ 600 Meta Ads…" onchange="savePlanField(4,'trafego',this.value)">500 reais em meta ads.</textarea>
       </div>
       <div class="plan-cell">
         <div class="plan-label"><span>🌟</span> Influenciadores</div>
-        <textarea class="plan-input tall" placeholder="Ex: @perfil — tipo de conteúdo…" onchange="savePlanField(4,'influenciadores',this.value)"></textarea>
+        <textarea class="plan-input tall" placeholder="Ex: @perfil — tipo de conteúdo…" onchange="savePlanField(4,'influenciadores',this.value)">Nenhum.</textarea>
       </div>
       <div class="plan-cell" style="border-right:none">
         <div class="plan-label"><span>👤</span> Persona do Mês</div>
-        <textarea class="plan-input tall" placeholder="Ex: Público-alvo, faixa etária…" onchange="savePlanField(4,'persona',this.value)"></textarea>
+        <textarea class="plan-input tall" placeholder="Ex: Público-alvo, faixa etária…" onchange="savePlanField(4,'persona',this.value)">Empresário do estado do Rio.</textarea>
       </div>
     </div>
     <div class="plan-grid-bottom">
       <div class="plan-cell-full">
         <div class="plan-label"><span>📝</span> Observações Gerais</div>
-        <textarea class="plan-input" style="min-height:48px;resize:vertical" placeholder="Anotações livres…" onchange="savePlanField(4,'observacoes',this.value)"></textarea>
+        <textarea class="plan-input" style="min-height:48px;resize:vertical" placeholder="Anotações livres…" onchange="savePlanField(4,'observacoes',this.value)">Fazer captação com novo conteúdo e focar também em making of.</textarea>
       </div>
     </div>
   </div><div class="cal-grid-outer"><div class="cal-dow"><div class="cal-dow-cell wknd">Dom</div><div class="cal-dow-cell">Seg</div><div class="cal-dow-cell">Ter</div><div class="cal-dow-cell">Qua</div><div class="cal-dow-cell">Qui</div><div class="cal-dow-cell">Sex</div><div class="cal-dow-cell wknd">Sáb</div></div><div class="cal-weeks"><div class="cal-week"><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day empty"><div class="day-num"></div></div><div class="cal-day" data-day="1"><div class="day-num">1</div><div class="special-label">🤥 Dia da Mentira</div>
@@ -768,14 +779,14 @@
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <div class="modal-header">
-      <h3>Editar Post · <span id="modalDateLabel"></span></h3>
+      <h3>Editar Post · <span id="modalDateLabel">4/1/2026</span></h3>
       <button class="modal-close" onclick="closeModal()">✕</button>
     </div>
     <div class="modal-body">
       <div class="form-group">
         <label>Tipo de Conteúdo</label>
         <div class="type-grid">
-          <div class="type-opt" data-type="arte" onclick="selectType('arte')">🎨 Arte</div>
+          <div class="type-opt selected" data-type="arte" onclick="selectType('arte')">🎨 Arte</div>
           <div class="type-opt" data-type="foto" onclick="selectType('foto')">📸 Foto</div>
           <div class="type-opt" data-type="story" onclick="selectType('story')">📱 Story</div>
           <div class="type-opt" data-type="reels" onclick="selectType('reels')">🎬 Reels</div>
@@ -786,7 +797,7 @@
         <label>Título / Frase da Postagem</label>
         <input type="text" id="modalPostTitle" placeholder="Ex: Churrasco voltou">
       </div>
-      <div class="form-group" id="fieldImgObs" style="display:none">
+      <div class="form-group" id="fieldImgObs" style="">
         <label>Observações de Imagem / Vídeo</label>
         <textarea id="modalImgObs" placeholder="Descreva a imagem ideal, enquadramento, luz, referências…" style="min-height:120px"></textarea>
       </div>
@@ -803,16 +814,15 @@ Slide 2: …" style="min-height:160px"></textarea>
         <label>Nº de Slides</label>
         <input type="text" id="modalSlidesNum" placeholder="Ex: 6 slides">
       </div>
-      <div class="form-group" id="fieldCaption">
+      <div class="form-group" id="fieldCaption" style="">
         <label>Legenda completa</label>
         <textarea id="modalCaption" placeholder="Texto, hashtags, telefone…"></textarea>
       </div>
       <div class="form-group">
         <div class="mgal-label">Imagens / Fotos <span class="mgal-hint">— arraste ou clique em ＋</span></div>
-        <div class="modal-gallery" id="modalGallery" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleDrop(event)">
-        </div>
+        <div class="modal-gallery" id="modalGallery" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleDrop(event)"><button class="mgal-add" type="button"><span style="font-size:22px">＋</span><span class="lbl">foto</span></button></div>
       </div>
-      <div class="form-group" id="fieldVideoLink" style="display:none">
+      <div class="form-group" id="fieldVideoLink" style="">
         <label>🎬 Link do Vídeo / Referência</label>
         <input type="url" id="modalVideoLink" placeholder="https://…">
       </div>
@@ -881,7 +891,7 @@ Slide 2: …" style="min-height:160px"></textarea>
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast show" id="toast">Salvando no site...</div>
 
 <script>
 const MONTH_NAMES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
@@ -1419,125 +1429,10 @@ function jsonForInlineScript(value){
 }
 
 function upsertPersistedStatePatch(html, state){
-  const patch = `\n<script id="persisted-calendar-state">\nwindow.__PERSISTED_CALENDAR_STATE__ = ${jsonForInlineScript(state)};\n<\/script>\n`;
-  if(/<script id="persisted-calendar-state">[\s\S]*?<\/script>/i.test(html)){
-    return html.replace(/<script id="persisted-calendar-state">[\s\S]*?<\/script>/i, patch.trim());
-  }
-  return html.replace(/<\/body>/i, patch + '</body>');
-}
+  const patch = `\n<script id="persisted-calendar-state">
+window.__PERSISTED_CALENDAR_STATE__ = {"header":{"client":"DigiThree","year":"2026","sub":"@DIGI.THREE · ESTÚDIO CRIATIVO · CALENDÁRIO EDITORIAL 2026"},"posts":[{"month":4,"day":1,"type":"carrossel","title":"Tudo que a Digi pode fazer por você","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slidesNum":"7 slides","descricao":"Apresentação dos serviços da DigiThree de forma dinâmica e direta, mostrando o escopo completo do que a agência entrega.","imgObs":"","roteiro":"","slides":"Slide 1 — Capa: Tudo que a DigiThree pode fazer por você\nSlide 2: Gestão de redes sociais. Planejamento, criação e publicação de conteúdo com estratégia por trás de cada post.\nSlide 3: Produção de vídeo. Captação, roteiro, edição e entrega de vídeos prontos para performar.\nSlide 4: Identidade visual. Logo, paleta de cores, tipografia e direção visual que posicionam a marca.\nSlide 5: Direção de marketing. Estratégia completa para que cada ação tenha objetivo e resultado.\nSlide 6: Tráfego pago. Anúncios pensados para alcançar o público certo no momento certo.\nSlide 7: Tudo isso com um time que entende do seu negócio. Fale com a Digi.","caption":"A Digi não faz só post bonito.\n\nGestão de redes, produção de vídeo, identidade visual, direção de marketing e tráfego pago.\n\nCada peça tem estratégia. Cada conteúdo tem objetivo.\n\nSe você quer marketing que funciona de verdade, a conversa começa aqui."},{"month":4,"day":2,"type":"reels","title":"Termos do marketing — parte 2","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slides":"","slidesNum":"","descricao":"Conteúdo educativo em formato de vídeo rápido, explicando termos do universo do marketing digital. Sequência da parte 1.","imgObs":"","roteiro":"Cena 1: \"Você sabe o que é CTA?\"\nCena 2: Explicação rápida com exemplo visual\nCena 3: Próximo termo — \"E lead?\"\nCena 4: Explicação com exemplo do dia a dia\nCena 5: Terceiro termo com encerramento: \"Salva pra não esquecer.\"","caption":"Marketing tem muita sigla. Muita palavra bonita que ninguém explica.\n\nEssa série é pra isso.\n\nTermos que você precisa conhecer se quer entender o que acontece por trás da tela.\n\nSalva esse vídeo e manda pra alguém que vive perguntando o que é CTA."},{"month":4,"day":6,"type":"carrossel","title":"Luxos que meus clientes têm","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slidesNum":"7 slides","descricao":"Mostrar o valor real de contratar uma agência e como isso facilita a vida do empresário. Carrossel estilo conteúdo viral, adaptado para marketing.","imgObs":"","roteiro":"","slides":"Slide 1 — Capa: Luxos que os clientes da DigiThree têm\nSlide 2: Ter marketing funcionando sem precisar pensar no que postar todos os dias. Ter estratégia antes da publicação. E ter um time pensando na marca enquanto você cuida do negócio.\nSlide 3: Conteúdo planejado para o mês inteiro. Sem aquela correria de última hora tentando inventar post. Constância que constrói presença de marca.\nSlide 4: Estratégia antes do conteúdo. Antes de gravar ou postar, existe direção. Quem é o público, qual mensagem transmitir e qual objetivo atingir.\nSlide 5: Vídeos editados profissionalmente. Captação é só o começo. A edição transforma o material em narrativa.\nSlide 6: Direção de marketing. Não é só sobre postar. É entender posicionamento, diferenciação e presença digital. Marketing bom cria percepção.\nSlide 7: Tempo para focar no negócio. Enquanto a Digi pensa no marketing, o empresário pode focar no crescimento da empresa. Marketing deixa de ser problema e vira ferramenta.","caption":"Alguns clientes da Digi têm certos luxos.\n\nNão precisam pensar no próximo conteúdo. Não precisam editar vídeo ou inventar postagem na correria.\n\nPorque quando existe planejamento, o marketing flui.\n\nE o empresário pode focar no que realmente importa: o negócio."},{"month":4,"day":8,"type":"reels","title":"ID Zen Sushi","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slides":"","slidesNum":"","descricao":"Reels de portfólio mostrando o trabalho de identidade visual realizado para o cliente Zen Sushi. Conteúdo institucional que reforça autoridade e entrega real.","imgObs":"","roteiro":"Cena 1: Tela com logo antiga ou referência do antes\nCena 2: Transição para a nova identidade visual\nCena 3: Aplicações — cardápio, redes sociais, embalagem\nCena 4: Resultado final com a marca aplicada\nCena 5: Encerramento com assinatura DigiThree","caption":"Identidade visual não é só um logo bonito.\n\nÉ a forma como o cliente enxerga a marca antes mesmo de provar o produto.\n\nEsse é o trabalho que fizemos pro Zen Sushi. Do conceito à aplicação.\n\nQuando a identidade é forte, o marketing trabalha sozinho."},{"month":4,"day":10,"type":"carrossel","title":"5 curiosidades sobre a Cimed","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"https://www.instagram.com/p/DVkJyLikSkH/?img_index=1","slidesNum":"5 slides","descricao":"Conteúdo educativo mostrando movimentos modernos de marketing e posicionamento de marca.","imgObs":"","roteiro":"","slides":"Slide 1 — Capa: 5 curiosidades sobre a Cimed que vão mudar sua visão de marketing. A farmacêutica brasileira virou referência em estratégia de marca. Mais do que produtos, a empresa investe em cultura, influência e presença digital.\nSlide 2: Toguro como Head de Comunicação. A Cimed nomeou o influenciador Toguro para liderar comunicação. Mais do que números, ele construiu uma comunidade fiel. A empresa apostou em quem realmente conversa com o público.\nSlide 3: Marketing baseado em comunidade. A marca entendeu que alcance não é tudo. Comunidade engajada gera confiança e influência real. Hoje, marcas fortes falam com pessoas, não com algoritmos.\nSlide 4: Executiva virou personagem licenciada. Uma executiva da empresa transformou sua própria marca pessoal em boneca. O movimento levou a executiva para o mercado de licenciamento. Marketing também pode criar cultura.\nSlide 5: Investimento em esporte. A Cimed investe em futebol e eventos esportivos. A presença em grandes eventos cria associação emocional com o público. Marca forte participa da cultura popular.","caption":"A Cimed não está fazendo apenas campanhas.\n\nEstá mudando a forma como grandes empresas pensam comunicação.\n\nComunidade, influência, esporte e cultura.\n\nQuem entende comportamento domina o marketing moderno."},{"month":4,"day":14,"type":"carrossel","title":"Pequenas empresas também podem ter marketing","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slidesNum":"5 slides","descricao":"Introdução ao novo plano da DigiThree para pequenas empresas.","imgObs":"","roteiro":"","slides":"Slide 1 — Capa: Marketing não é só para empresas grandes. Durante muito tempo marketing parecia algo distante para pequenos negócios. Mas crescer hoje exige presença digital.\nSlide 2: Toda empresa precisa de estratégia. Não basta postar. É preciso ter direção, mensagem clara e consistência.\nSlide 3: Pequenas empresas também precisam aparecer. Quem não é visto, não é lembrado. E quem não é lembrado, não é escolhido.\nSlide 4: Pensando nisso… A DigiThree está criando novos planos pensados para pequenas empresas.\nSlide 5: Marketing acessível e estratégico. Conteúdo, direção e planejamento. Tudo adaptado para quem está começando a crescer.","caption":"Marketing não pode ser privilégio de empresas grandes.\n\nPequenos negócios também precisam crescer, aparecer e se posicionar.\n\nPor isso estamos criando novos planos pensados para quem quer começar com estratégia."},{"month":4,"day":16,"type":"reels","title":"É só um postzinho…","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"https://www.instagram.com/reels/DHMVXJXJ-TK/","slides":"","slidesNum":"","descricao":"Quebrar a percepção de que marketing é simples. Mostrar o processo por trás de um conteúdo.","imgObs":"Texto central: \"É só um postzinho…\"","roteiro":"Texto central na tela: \"É só um postzinho…\"\nMostrar o processo completo por trás: estratégia, roteiro, gravação, edição e direção criativa.","caption":"\"É só um postzinho.\"\n\nFrase clássica de quem nunca viu o que acontece antes do botão publicar.\n\nPor trás de um conteúdo existem estratégia, roteiro, gravação, edição e direção criativa.\n\nMarketing não é improviso. É processo."},{"month":4,"day":20,"type":"reels","title":"Você precisa","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slides":"","slidesNum":"","descricao":"Reels direto ao ponto mostrando o que o empresário realmente precisa para crescer no digital. Tom provocativo e assertivo.","imgObs":"","roteiro":"Cena 1: \"Você não precisa de mais seguidores.\"\nCena 2: \"Você precisa de estratégia.\"\nCena 3: \"Você não precisa de post todo dia.\"\nCena 4: \"Você precisa de conteúdo que converte.\"\nCena 5: \"Você não precisa fazer tudo sozinho.\"\nCena 6: \"Você precisa de um time. A Digi tá aqui.\"","caption":"Seguidor não paga boleto. Post bonito sem estratégia não vende.\n\nO que você precisa de verdade é de direção.\n\nSaber pra quem falar, o que falar e por que falar.\n\nO resto é consequência."},{"month":4,"day":22,"type":"reels","title":"Dia a dia","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slides":"","slidesNum":"","descricao":"Reels mostrando o dia a dia da agência. Bastidores, rotina de produção, edição, reuniões. Humaniza a marca e gera proximidade.","imgObs":"","roteiro":"Cena 1: Chegada / setup do dia\nCena 2: Reunião de pauta ou briefing\nCena 3: Gravação de conteúdo para cliente\nCena 4: Edição na timeline\nCena 5: Entrega final / publicação\nTexto de apoio: \"Um dia normal na Digi.\"","caption":"Por trás de cada post que você vê no feed, existe um dia inteiro de trabalho.\n\nBriefing, gravação, edição, revisão e publicação.\n\nIsso é o dia a dia da Digi.\n\nMarketing não acontece sozinho. Acontece nos bastidores."},{"month":4,"day":24,"type":"reels","title":"Making of FITA","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slides":"","slidesNum":"","descricao":"Reels de bastidores mostrando o processo de produção de um trabalho para o cliente FITA. Conteúdo de portfólio + bastidores.","imgObs":"","roteiro":"Cena 1: Chegada no set / preparação\nCena 2: Direção da cena / captação\nCena 3: Detalhes do produto ou marca\nCena 4: Bastidores da equipe trabalhando\nCena 5: Resultado final editado\nTexto de apoio: \"Making of — FITA\"","caption":"Do set à tela.\n\nCada projeto passa por direção, captação e edição antes de virar conteúdo.\n\nEsse é o making of do trabalho que fizemos pra FITA.\n\nProdução de verdade tem processo. E o processo é bonito de ver."},{"month":4,"day":28,"type":"carrossel","title":"Qual dessas marcas parece mais cara?","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"https://www.instagram.com/p/DU1U6JcEb05/","slidesNum":"8 slides","descricao":"Carrossel comparativo mostrando como identidade visual muda a percepção de valor. Estética: fundo estilo tweet/X, minimalista, textos curtos, visual elegante.","imgObs":"","roteiro":"","slides":"Slide 1 — Capa: Qual dessas marcas parece mais cara? (duas imagens comparativas) Spoiler: nem sempre é o produto. É a identidade visual.\nSlide 2: No universo das marcas, a identidade visual é a primeira impressão. Antes de conhecer o produto, o público já formou uma opinião. E essa opinião começa pelo visual.\nSlide 3: Cores, tipografia, logo e design não são apenas estética. Eles comunicam posicionamento. Sofisticação, simplicidade, luxo ou acessibilidade.\nSlide 4: Marcas de luxo entendem isso muito bem. Um monograma, uma cor específica ou uma embalagem bem pensada podem transformar um produto comum em um objeto de desejo.\nSlide 5: A caixa laranja da Hermès. O vermelho da Louboutin. O duplo C da Chanel. Esses códigos visuais criam reconhecimento imediato. E aumentam o valor percebido.\nSlide 6: Identidade visual também define quem é o público da marca. Algumas marcas querem parecer exclusivas. Outras querem parecer acessíveis. O design comunica isso sem precisar falar.\nSlide 7: Por isso, duas empresas podem vender produtos muito parecidos… Mas uma parece muito mais valiosa. Porque branding também constrói percepção.\nSlide 8 — Final: No marketing, valor percebido importa tanto quanto o produto. E muitas vezes… é a identidade visual que faz uma marca parecer cara.","caption":"Por que algumas marcas parecem mais caras que outras?\n\nNem sempre é o produto.\n\nMuitas vezes é a identidade visual.\n\nCores, tipografia, design, embalagem e direção de arte criam a primeira impressão da marca.\n\nE no marketing, percepção também constrói valor.\n\nUma identidade visual bem construída não só chama atenção — ela posiciona a marca no público certo."},{"month":4,"day":30,"type":"reels","title":"Você contratou nossos serviços","pending":false,"trafego":false,"postado":false,"imgs":[],"videoLink":"","slides":"","slidesNum":"","descricao":"Reels institucional/humor mostrando a transformação que acontece quando o cliente contrata a DigiThree. Antes e depois da presença digital.","imgObs":"","roteiro":"Cena 1: \"Você antes de contratar a Digi\" — feed bagunçado, sem padrão, sem constância\nCena 2: Transição\nCena 3: \"Você depois de contratar a Digi\" — feed organizado, conteúdo profissional, estratégia funcionando\nCena 4: Encerramento com assinatura DigiThree","caption":"A diferença entre postar por postar e ter marketing de verdade?\n\nEstratégia, direção, constância e produção profissional.\n\nQuando o marketing funciona, o resultado aparece no feed e no caixa.\n\nEsse é o efeito Digi."},{"month":1,"day":4,"type":"arte","title":"teste","caption":"","imgObs":"","roteiro":"","videoLink":"","slides":"","slidesNum":"","pending":false,"postado":false,"trafego":false,"imgs":[]}],"planData":{"1":{},"2":{},"3":{},"4":{"objetivos":"Melhorar alcance no orgânico.","investimento":"500 reais.","trafego":"500 reais em meta ads.","influenciadores":"Nenhum.","persona":"Empresário do estado do Rio.","observacoes":"Fazer captação com novo conteúdo e focar também em making of."},"5":{},"6":{},"7":{},"8":{},"9":{},"10":{},"11":{},"12":{}},"monthMeta":[{"notes":"","special":{"1":"🎆 Ano Novo"}},{"notes":"","special":{"16":"🎭 Carnaval","17":"🎭 Carnaval","18":"🎭 Quarta de Cinzas"}},{"notes":"","special":{"8":"👩 Dia da Mulher","20":"🌿 Início do Outono"}},{"notes":"DigiThree — @digi.three — 12 posts planejados","special":{"1":"🤥 Dia da Mentira","2":"🧩 Consciência do Autismo","3":"✝️ Sexta-Feira Santa","5":"🐣 Páscoa","6":"🙏 São Benedito","7":"🌍 Dia Mundial da Saúde","13":"💋 Dia do Beijo","14":"☕ Dia Mundial do Café","21":"🇧🇷 Tiradentes","22":"🌍 Dia da Terra","23":"📚 Dia Int. do Livro","24":"🥩 Dia Int. do Churrasco","28":"👵 Dia da Sogra","30":"🎷 Dia Int. do Jazz"}},{"notes":"","special":{"10":"💐 Dia das Mães"}},{"notes":"","special":{"5":"🌍 Meio Ambiente","12":"💑 Dia dos Namorados"}},{"notes":"","special":{}},{"notes":"","special":{"9":"👨 Dia dos Pais"}},{"notes":"","special":{"7":"🇧🇷 Independência"}},{"notes":"","special":{"12":"🇧🇷 N.Sra. Aparecida","31":"🎃 Halloween"}},{"notes":"","special":{"2":"✝️ Finados","15":"🇧🇷 Proclamação Rep.","20":"⚫ Black Friday"}},{"notes":"","special":{"25":"🎄 Natal","31":"🥂 Réveillon"}}]};
+</script><input type="file" accept="image/*" multiple="" style="display: none;"><input type="file" accept="image/*" multiple="" style="display: none;">
 
-function buildPersistentHtml(){
-  const client = (document.getElementById('hdrClient')?.innerText || '').trim();
-  const year = (document.getElementById('hdrYear')?.innerText || '').trim();
-  const sub = (document.getElementById('hdrSub')?.innerText || '').trim();
-  let src = document.documentElement.outerHTML;
-  src = src.replace(/(<span contenteditable="true" id="hdrClient"[^>]*>)([\s\S]*?)(<\/span>)/, `$1${client}$3`);
-  src = src.replace(/(<em contenteditable="true" id="hdrYear"[^>]*>)([\s\S]*?)(<\/em>)/, `$1${year}$3`);
-  src = src.replace(/(<span[^>]*id="hdrSub"[^>]*>)([\s\S]*?)(<\/span>)/, `$1${sub}$3`);
-  src = upsertPersistedStatePatch(src, coletarDadosParaSalvar());
-  return src;
-}
-
-async function commitHtmlToGitHub(html){
-  const cfg = await ensureGitHubPagesConfig();
-  const apiBase = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}`;
-
-  let sha = null;
-  const existing = await fetch(apiBase, {
-    headers: {
-      'Accept': 'application/vnd.github+json',
-      'Authorization': `Bearer ${cfg.token}`
-    }
-  });
-
-  if(existing.status === 200){
-    const current = await existing.json();
-    sha = current.sha;
-  }else if(existing.status !== 404){
-    const errText = await existing.text();
-    throw new Error(`GitHub respondeu ${existing.status}. ${errText}`);
-  }
-
-  const body = {
-    message: `Atualiza ${cfg.path} via calendário editorial`,
-    content: utf8ToBase64(html),
-    branch: cfg.branch
-  };
-  if(sha) body.sha = sha;
-
-  const response = await fetch(apiBase, {
-    method: 'PUT',
-    headers: {
-      'Accept': 'application/vnd.github+json',
-      'Authorization': `Bearer ${cfg.token}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  });
-
-  if(!response.ok){
-    const errText = await response.text();
-    throw new Error(`Não foi possível salvar no GitHub (${response.status}). ${errText}`);
-  }
-
-  return response.json();
-}
-
-async function salvarAlteracoes(){
-  try{
-    salvarLocal(false);
-    showToast('Salvando no site...');
-    const html = buildPersistentHtml();
-    await commitHtmlToGitHub(html);
-    showToast('Alterações salvas no site com sucesso!');
-  }catch(err){
-    console.error(err);
-    showToast(err && err.message ? err.message : 'Não foi possível salvar no site.');
-  }
-}
-
-function exportHTML(){
-  try{
-    salvarLocal(false);
-    const client=(document.getElementById('hdrClient')?.innerText||'cliente').trim();
-    const year=(document.getElementById('hdrYear')?.innerText||'2026').trim();
-    const html=buildPersistentHtml();
-    const slug=(client||'cliente').toLowerCase().replace(/\s+/g,'-');
-    const a=document.createElement('a');
-    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
-    a.download=`calendario_editorial_${slug}_${year}.html`;
-    a.click();
-    URL.revokeObjectURL(a.href);
-    showToast('📥 HTML salvo com todas as edições!');
-  }catch(err){
-    console.error(err);
-    showToast('Não foi possível gerar o HTML.');
-  }
-}
-function showToast(msg){
-  const t=document.getElementById('toast');t.textContent=msg;
-  t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);
-}
-
-document.getElementById('modalOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal();});
-
-// ── Init ──
-carregarAlteracoes();
-if(window.__PERSISTED_CALENDAR_STATE__){ aplicarDadosSalvos(window.__PERSISTED_CALENDAR_STATE__); }
-buildMonthNav();
-renderAll();
-
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const id=e.target.id;
-      const idx=parseInt(id.replace('month-',''));
-      document.querySelectorAll('.month-btn').forEach((b,i)=>b.classList.toggle('active',i===idx));
-    }
-  });
-},{threshold:0.15});
-document.querySelectorAll('.month-block').forEach(el=>observer.observe(el));
-</script><input type="file" accept="image/*" multiple="" style="display: none;">
 
 
 </body></html>
