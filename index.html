@@ -216,6 +216,8 @@
   <span class="toolbar-label">Ações:</span>
   <button class="btn btn-cyan" onclick="window.print()">🖨 Imprimir</button>
   <button class="btn btn-cyan" onclick="salvarAlteracoes()">💾 Salvar alterações</button>
+  <button class="btn btn-ghost" onclick="resetGitHubToken()">🔐 Token GitHub</button>
+  <button class="btn btn-ghost" onclick="exportHTML()">📥 Salvar HTML</button>
   <button class="btn btn-ghost" id="editModeBtn" onclick="toggleEditMode()">✏️ Modo Edição</button>
   <button class="btn btn-ghost" onclick="openDatasModal()">🗓 Datas Comemorativas</button>
   <div class="month-nav" id="monthNav"><button class="month-btn" id="mnav0">Jan</button><button class="month-btn" id="mnav1">Fev</button><button class="month-btn" id="mnav2">Mar</button><button class="month-btn active" id="mnav3">Abr</button><button class="month-btn" id="mnav4">Mai</button><button class="month-btn" id="mnav5">Jun</button><button class="month-btn" id="mnav6">Jul</button><button class="month-btn" id="mnav7">Ago</button><button class="month-btn" id="mnav8">Set</button><button class="month-btn" id="mnav9">Out</button><button class="month-btn" id="mnav10">Nov</button><button class="month-btn" id="mnav11">Dez</button></div>
@@ -906,7 +908,7 @@ POSTS = POSTS.map(p => ({...p, imgs: p.imgs||[], caption:p.caption||'', descrica
 let PLAN_DATA = {"1":{},"2":{},"3":{},"4":{"objetivos":"Melhorar alcance no orgânico.","investimento":"500 reais.","trafego":"500 reais em meta ads.","influenciadores":"Nenhum.","persona":"Empresário do estado do Rio.","observacoes":"Fazer captação com novo conteúdo e focar também em making of."},"5":{},"6":{},"7":{},"8":{},"9":{},"10":{},"11":{},"12":{}};
 
 function getPlan(m){ return PLAN_DATA[m] || (PLAN_DATA[m]={}); }
-function savePlanField(m, field, val){ getPlan(m)[field] = val; }
+function savePlanField(m, field, val){ getPlan(m)[field] = val; salvarLocal(false); }
 
 const TYPE_ICONS={arte:'🎨',foto:'📸',story:'📱',reels:'🎬',carrossel:'🖼'};
 const TYPE_LABELS={arte:'Arte',foto:'Foto',story:'Story',reels:'Reels',carrossel:'Carrossel'};
@@ -1012,7 +1014,7 @@ function buildMonthBlock(mc,mIdx){
   mn.setAttribute('data-month', mc.month);
   mn.setAttribute('placeholder', 'Descreva a campanha do mês, promoções, objetivos…');
   mn.innerHTML = mc.notes || '';
-  mn.addEventListener('input', ()=>{ MONTHS_CONFIG[mIdx].notes = mn.innerHTML; });
+  mn.addEventListener('input', ()=>{ MONTHS_CONFIG[mIdx].notes = mn.innerHTML; salvarLocal(false); });
   block.appendChild(mn);
   block.appendChild(buildPlanPanel(mc));
   const outer=document.createElement('div');
@@ -1091,7 +1093,7 @@ function buildMonthBlock(mc,mIdx){
 
 function updateTitle(mIdx,day,t){
   const i=getPostIdx(mIdx,day);
-  if(i>=0)POSTS[i].title=t.trim();
+  if(i>=0){POSTS[i].title=t.trim(); salvarLocal(false);}
 }
 
 function openModal(mIdx,day,isNew=false){
@@ -1172,13 +1174,13 @@ function savePost(){
     imgs:[...modalImgs]
   };
   if(currentPostIdx>=0){POSTS[currentPostIdx]=pd;}else{POSTS.push(pd);}
-  closeModal();renderAll();showToast('✅ Post salvo!');
+  closeModal();renderAll();salvarLocal(false);showToast('✅ Post salvo!');
 }
 function deletePost(){if(!confirm('Excluir este post?'))return;deletePostByKey(currentMonthIdx,currentDay);closeModal();}
 function deletePostByKey(mIdx,day){
   const mc=MONTHS_CONFIG[mIdx];
   const i=POSTS.findIndex(p=>p.month===mc.month&&p.day===day);
-  if(i>=0){POSTS.splice(i,1);renderAll();showToast('Post excluído.');}
+  if(i>=0){POSTS.splice(i,1);renderAll();salvarLocal(false);showToast('Post excluído.');}
 }
 function togglePostado(mIdx,day){
   const mc=MONTHS_CONFIG[mIdx];
@@ -1186,7 +1188,7 @@ function togglePostado(mIdx,day){
   if(i<0)return;
   POSTS[i].postado=!POSTS[i].postado;
   if(POSTS[i].postado)POSTS[i].pending=false;
-  renderAll();showToast(POSTS[i].postado?'✅ Marcado como postado!':'↩️ Desmarcado.');
+  renderAll();salvarLocal(false);showToast(POSTS[i].postado?'✅ Marcado como postado!':'↩️ Desmarcado.');
 }
 
 let _cardMIdx=null,_cardDay2=null;
@@ -1200,14 +1202,14 @@ _cardIn.addEventListener('change',e=>{
   const idx=POSTS.findIndex(p=>p.month===mc.month&&p.day===_cardDay2);
   if(idx<0)return;
   let n=0;
-  files.forEach(f=>{const r=new FileReader();r.onload=ev=>{POSTS[idx].imgs=POSTS[idx].imgs||[];POSTS[idx].imgs.push(ev.target.result);if(++n===files.length){renderAll();showToast(`${files.length} imagem(ns) adicionada(s)!`);}};r.readAsDataURL(f);});
+  files.forEach(f=>{const r=new FileReader();r.onload=ev=>{POSTS[idx].imgs=POSTS[idx].imgs||[];POSTS[idx].imgs.push(ev.target.result);if(++n===files.length){renderAll();salvarLocal(false);showToast(`${files.length} imagem(ns) adicionada(s)!`);}};r.readAsDataURL(f);});
   _cardIn.value='';
 });
 function triggerCardImg(mIdx,day){_cardMIdx=mIdx;_cardDay2=day;_cardIn.click();}
 function removeCardThumb(mIdx,day,idx){
   const mc=MONTHS_CONFIG[mIdx];
   const i=POSTS.findIndex(p=>p.month===mc.month&&p.day===day);
-  if(i>=0){POSTS[i].imgs.splice(idx,1);renderAll();showToast('Imagem removida.');}
+  if(i>=0){POSTS[i].imgs.splice(idx,1);renderAll();salvarLocal(false);showToast('Imagem removida.');}
 }
 
 function onThumbClick(mIdx,day,idx){
@@ -1292,12 +1294,14 @@ function saveDatas(){
   MONTHS_CONFIG[mIdx].special = newSpecial;
   closeDatasModal();
   renderAll();
+  salvarLocal(false);
   showToast('🗓 Datas comemorativas atualizadas!');
 }
 document.getElementById('datasMonthSel').addEventListener('change', renderDatasList);
 document.getElementById('datasOverlay').addEventListener('click', e=>{if(e.target===e.currentTarget)closeDatasModal();});
 
 const STORAGE_KEY = 'calendario_editorial_digithree_abril_2026';
+const GITHUB_CFG_KEY = 'calendar-github-pages-config-v1';
 
 function coletarDadosParaSalvar(){
   return {
@@ -1331,13 +1335,12 @@ function aplicarDadosSalvos(payload){
   }
 }
 
-function salvarAlteracoes(){
+function salvarLocal(showToastMessage=false){
   try{
     localStorage.setItem(STORAGE_KEY, JSON.stringify(coletarDadosParaSalvar()));
-    showToast('Alterações salvas com sucesso!');
+    if(showToastMessage) showToast('Alterações salvas neste navegador.');
   }catch(err){
     console.error(err);
-    alert('Não foi possível salvar as alterações neste navegador.');
   }
 }
 
@@ -1351,6 +1354,166 @@ function carregarAlteracoes(){
   }
 }
 
+function inferGitHubPagesConfig(){
+  return {
+    owner: 'digithree-planejamentos',
+    repo: 'calendario-digithree',
+    branch: 'main',
+    path: 'index.html',
+    token: ''
+  };
+}
+
+function loadGitHubPagesConfig(){
+  const inferred = inferGitHubPagesConfig();
+  try{
+    const saved = JSON.parse(localStorage.getItem(GITHUB_CFG_KEY) || '{}');
+    return {
+      ...inferred,
+      branch: saved.branch || inferred.branch,
+      token: saved.token || ''
+    };
+  }catch(_err){
+    return inferred;
+  }
+}
+
+function saveGitHubPagesConfig(cfg){
+  localStorage.setItem(GITHUB_CFG_KEY, JSON.stringify({branch: cfg.branch, token: cfg.token || ''}));
+}
+
+function resetGitHubToken(){
+  localStorage.removeItem(GITHUB_CFG_KEY);
+  showToast('Configuração local removida. No próximo salvamento o token será solicitado novamente.');
+}
+
+async function ensureGitHubPagesConfig(){
+  const cfg = loadGitHubPagesConfig();
+  if(!cfg.token){
+    const token = window.prompt(
+      'Cole um token do GitHub com permissão de Contents: Read and Write para salvar no site.\n\nEle ficará salvo apenas neste navegador.',
+      ''
+    );
+    if(!token) throw new Error('Salvamento cancelado.');
+    cfg.token = token.trim();
+  }
+  if(!cfg.branch){
+    cfg.branch = (window.prompt('Qual branch deve ser atualizada?', 'main') || 'main').trim() || 'main';
+  }
+  saveGitHubPagesConfig(cfg);
+  return cfg;
+}
+
+function utf8ToBase64(str){
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  const chunk = 0x8000;
+  for(let i=0;i<bytes.length;i+=chunk){
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunk));
+  }
+  return btoa(binary);
+}
+
+function jsonForInlineScript(value){
+  return JSON.stringify(value).replace(/<\//g, '<\\/');
+}
+
+function upsertPersistedStatePatch(html, state){
+  const patch = `\n<script id="persisted-calendar-state">\nwindow.__PERSISTED_CALENDAR_STATE__ = ${jsonForInlineScript(state)};\n<\/script>\n`;
+  if(/<script id="persisted-calendar-state">[\s\S]*?<\/script>/i.test(html)){
+    return html.replace(/<script id="persisted-calendar-state">[\s\S]*?<\/script>/i, patch.trim());
+  }
+  return html.replace(/<\/body>/i, patch + '</body>');
+}
+
+function buildPersistentHtml(){
+  const client = (document.getElementById('hdrClient')?.innerText || '').trim();
+  const year = (document.getElementById('hdrYear')?.innerText || '').trim();
+  const sub = (document.getElementById('hdrSub')?.innerText || '').trim();
+  let src = document.documentElement.outerHTML;
+  src = src.replace(/(<span contenteditable="true" id="hdrClient"[^>]*>)([\s\S]*?)(<\/span>)/, `$1${client}$3`);
+  src = src.replace(/(<em contenteditable="true" id="hdrYear"[^>]*>)([\s\S]*?)(<\/em>)/, `$1${year}$3`);
+  src = src.replace(/(<span[^>]*id="hdrSub"[^>]*>)([\s\S]*?)(<\/span>)/, `$1${sub}$3`);
+  src = upsertPersistedStatePatch(src, coletarDadosParaSalvar());
+  return src;
+}
+
+async function commitHtmlToGitHub(html){
+  const cfg = await ensureGitHubPagesConfig();
+  const apiBase = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path}`;
+
+  let sha = null;
+  const existing = await fetch(apiBase, {
+    headers: {
+      'Accept': 'application/vnd.github+json',
+      'Authorization': `Bearer ${cfg.token}`
+    }
+  });
+
+  if(existing.status === 200){
+    const current = await existing.json();
+    sha = current.sha;
+  }else if(existing.status !== 404){
+    const errText = await existing.text();
+    throw new Error(`GitHub respondeu ${existing.status}. ${errText}`);
+  }
+
+  const body = {
+    message: `Atualiza ${cfg.path} via calendário editorial`,
+    content: utf8ToBase64(html),
+    branch: cfg.branch
+  };
+  if(sha) body.sha = sha;
+
+  const response = await fetch(apiBase, {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/vnd.github+json',
+      'Authorization': `Bearer ${cfg.token}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+
+  if(!response.ok){
+    const errText = await response.text();
+    throw new Error(`Não foi possível salvar no GitHub (${response.status}). ${errText}`);
+  }
+
+  return response.json();
+}
+
+async function salvarAlteracoes(){
+  try{
+    salvarLocal(false);
+    showToast('Salvando no site...');
+    const html = buildPersistentHtml();
+    await commitHtmlToGitHub(html);
+    showToast('Alterações salvas no site com sucesso!');
+  }catch(err){
+    console.error(err);
+    showToast(err && err.message ? err.message : 'Não foi possível salvar no site.');
+  }
+}
+
+function exportHTML(){
+  try{
+    salvarLocal(false);
+    const client=(document.getElementById('hdrClient')?.innerText||'cliente').trim();
+    const year=(document.getElementById('hdrYear')?.innerText||'2026').trim();
+    const html=buildPersistentHtml();
+    const slug=(client||'cliente').toLowerCase().replace(/\s+/g,'-');
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+    a.download=`calendario_editorial_${slug}_${year}.html`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('📥 HTML salvo com todas as edições!');
+  }catch(err){
+    console.error(err);
+    showToast('Não foi possível gerar o HTML.');
+  }
+}
 function showToast(msg){
   const t=document.getElementById('toast');t.textContent=msg;
   t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);
@@ -1360,6 +1523,7 @@ document.getElementById('modalOverlay').addEventListener('click',e=>{if(e.target
 
 // ── Init ──
 carregarAlteracoes();
+if(window.__PERSISTED_CALENDAR_STATE__){ aplicarDadosSalvos(window.__PERSISTED_CALENDAR_STATE__); }
 buildMonthNav();
 renderAll();
 
